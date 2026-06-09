@@ -126,14 +126,20 @@ Input: "Complete waste of time. Terrible plot, awful dialogue."
 
 ---
 
-## Part of ML Portfolio
+## Part of the VectorBrainAI AI & Machine Learning Bootcamp
+**Bootcamp:** AI & Machine Learning Bootcamp — VectorBrainAI  
+**Module:** Module 5 — NLP & Modern ML Pipelines  
+**Program URL:** https://vectorbrainai.com/bootcamp/
 
-This project is part of an applied machine learning portfolio covering regression, classification, deep learning, and NLP:
+### Full Portfolio — Bootcamp Mini-Projects
 
-- [Airbnb Price Prediction](https://github.com/robertciceroson/Airbnb_Price_Prediction)
-- [Heart Disease Risk Classification](https://github.com/robertciceroson/Heart_Disease_Risk_Prediction)
-- [Digit Recognition App (CNN)](https://github.com/robertciceroson/Digit_Recognition_App)
-- **NLP Movie Review Sentiment Classifier** ← this repo
+| Module | Project | Repo |
+|---|---|---|
+| Module 1 — Foundations of ML | Predicting Airbnb Prices | [Airbnb_Price_Prediction](https://github.com/robertciceroson/Airbnb_Price_Prediction) |
+| Module 2 — Supervised Learning | Heart Disease Risk Classification | [Heart_Disease_Risk_Prediction](https://github.com/robertciceroson/Heart_Disease_Risk_Prediction) |
+| Module 4 — Neural Networks & Deep Learning | Digit Recognition App (CNN) | [Digit_Recognition_App](https://github.com/robertciceroson/Digit_Recognition_App) |
+| Module 5 — NLP & Modern ML Pipelines | **Movie Review Sentiment Classifier** | ← this repo |
+
 
 ---
 
