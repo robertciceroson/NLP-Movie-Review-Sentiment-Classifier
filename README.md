@@ -145,6 +145,6 @@ Input: "Complete waste of time. Terrible plot, awful dialogue."
 
 ## Author
 
-**Robert C. Son**  
-Scrum Master · Process Engineer · Prompt Engineer · Data Analyst · AI/ML Practitioner · CSM · CSPO · AI-Empowered SAFe Agilist  
+**Robert Cicero Son**  
+Scrum Master · Process Engineer · Prompt Engineer · Data Analyst · AI/ML Practitioner · CSM · CSPO · AI-Empowered SAFe Agilist  · Active DoD Secret Clearance 
 [github.com/robertciceroson](https://github.com/robertciceroson) · [LinkedIn](https://www.linkedin.com/in/robert-son-0b33b3bb)
