@@ -1,0 +1,17 @@
+# Large data files
+IMDB_dataset.csv
+*.csv
+
+# GloVe vectors
+glove.6B.100d.txt
+*.txt
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+.env
