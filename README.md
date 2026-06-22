@@ -58,8 +58,8 @@ All models evaluated on the same 400-sample held-out test set.
 NLP_Movie_Review_Sentiment_Classifier/
 │
 ├── V3_nlp_sentiment_classifier.ipynb   # Main notebook — full pipeline
-├── IMDB_Dataset.csv                    # Dataset (download separately from Kaggle)
-├── glove.6B.100d.txt                   # GloVe vectors (auto-downloaded by notebook)
+├── IMDB_dataset.csv                    # Dataset — not included; download from Kaggle separately
+├── glove.6B.100d.txt                   # GloVe vectors — not included; auto-downloaded by notebook on first run
 └── README.md
 ```
 
@@ -146,5 +146,5 @@ Input: "Complete waste of time. Terrible plot, awful dialogue."
 ## Author
 
 **Robert C. Son**  
-Process Engineer · Data Analyst · CSM · CSPO · AI-Empowered SAFe Agilist  
+Scrum Master · Process Engineer · Prompt Engineer · Data Analyst · AI/ML Practitioner · CSM · CSPO · AI-Empowered SAFe Agilist  
 [github.com/robertciceroson](https://github.com/robertciceroson) · [LinkedIn](https://www.linkedin.com/in/robert-son-0b33b3bb)
