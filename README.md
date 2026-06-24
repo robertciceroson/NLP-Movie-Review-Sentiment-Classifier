@@ -10,6 +10,8 @@ This project classifies IMDB movie reviews as **positive** or **negative** using
 
 **Dataset:** [IMDB Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) — 50,000 labeled reviews (balanced positive / negative). The notebook samples 2,000 reviews (1,000 per class) for a fast, reproducible experiment with an 80/20 stratified train/test split.
 
+**Supplementary Dataset:** [Sentiment140 Tweets Dataset](https://www.kaggle.com/datasets/kazanova/sentiment140) — used for cross-domain sentiment evaluation and generalization testing.
+
 ---
 
 ## Concepts Covered
@@ -58,8 +60,11 @@ All models evaluated on the same 400-sample held-out test set.
 NLP_Movie_Review_Sentiment_Classifier/
 │
 ├── V3_nlp_sentiment_classifier.ipynb   # Main notebook — full pipeline
-├── IMDB_dataset.csv                    # Dataset — not included; download from Kaggle separately
+├── IMDB_Dataset.csv                    # IMDB dataset — not included; download from Kaggle separately
+├── tweets_dataset_kaggle.csv           # Tweets dataset — not included; download from Kaggle separately
 ├── glove.6B.100d.txt                   # GloVe vectors — not included; auto-downloaded by notebook on first run
+├── requirements.txt                    # All dependencies
+├── start.bat                           # One-click launcher for Windows
 └── README.md
 ```
 
@@ -67,20 +72,43 @@ NLP_Movie_Review_Sentiment_Classifier/
 
 ## Setup & Requirements
 
-### Install dependencies
+### Option A — One-Click Launch (Windows)
 
-```bash
-pip install transformers torch scikit-learn nltk gensim matplotlib seaborn wordcloud tqdm
-```
+Double-click `start.bat` in the project folder. It will:
+- Check Python is installed
+- Verify both `IMDB_Dataset.csv` and `tweets_dataset_kaggle.csv` are present
+- Create a virtual environment automatically if one doesn't exist
+- Install all dependencies from `requirements.txt`
+- Download required NLTK data packages automatically
+- Launch Jupyter and open `V3_nlp_sentiment_classifier.ipynb` directly
 
-### Download NLTK data (run once)
+> **Note:** PyTorch and HuggingFace Transformers may take several minutes to install. DistilBERT model weights (~250MB) and GloVe vectors (~822MB) will download automatically on first run.
 
-```python
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
-```
+### Option B — Manual Launch
+
+1. Download both datasets from Kaggle and place them in the project folder:
+   - [IMDB Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) → `IMDB_Dataset.csv`
+   - [Sentiment140 Tweets Dataset](https://www.kaggle.com/datasets/kazanova/sentiment140) → `tweets_dataset_kaggle.csv`
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Download NLTK data (run once):
+   ```python
+   import nltk
+   nltk.download('punkt')
+   nltk.download('stopwords')
+   nltk.download('wordnet')
+   ```
+
+4. Launch Jupyter:
+   ```bash
+   jupyter notebook V3_nlp_sentiment_classifier.ipynb
+   ```
+
+5. Run all cells top to bottom (`Kernel → Restart & Run All`)
 
 ### GloVe vectors
 
@@ -140,11 +168,10 @@ Input: "Complete waste of time. Terrible plot, awful dialogue."
 | Module 4 — Neural Networks & Deep Learning | Digit Recognition App (CNN) | [Digit_Recognition_App](https://github.com/robertciceroson/Digit_Recognition_App) |
 | Module 5 — NLP & Modern ML Pipelines | **Movie Review Sentiment Classifier** | ← this repo |
 
-
 ---
 
 ## Author
 
 **Robert Cicero Son**  
-Scrum Master · Process Engineer · Prompt Engineer · Data Analyst · AI/ML Practitioner · CSM · CSPO · AI-Empowered SAFe Agilist  · Active DoD Secret Clearance 
+Scrum Master · Process Engineer · Prompt Engineer · Data Analyst · AI/ML Practitioner · CSM · CSPO · AI-Empowered SAFe Agilist · Active DoD Secret Clearance  
 [github.com/robertciceroson](https://github.com/robertciceroson) · [LinkedIn](https://www.linkedin.com/in/robert-son-0b33b3bb)
