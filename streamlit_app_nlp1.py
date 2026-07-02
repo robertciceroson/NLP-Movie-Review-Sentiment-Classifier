@@ -21,13 +21,21 @@ def load_distilbert():
         max_length=512,
     )
 
-# ── Train TF-IDF + Logistic Regression on IMDB subset ────────────────────────
+# ── Train TF-IDF + Logistic Regression on NLTK movie_reviews corpus ──────────
 @st.cache_resource(show_spinner=False)
 def load_tfidf_model():
-    from datasets import load_dataset
-    ds = load_dataset("imdb", split="train[:2000]")
-    texts  = ds["text"]
-    labels = ds["label"]          # 0 = negative, 1 = positive
+    import nltk
+    nltk.download("movie_reviews", quiet=True)
+    from nltk.corpus import movie_reviews
+
+    pos_files = movie_reviews.fileids("pos")
+    neg_files = movie_reviews.fileids("neg")
+
+    texts  = (
+        [movie_reviews.raw(f) for f in pos_files] +
+        [movie_reviews.raw(f) for f in neg_files]
+    )
+    labels = [1] * len(pos_files) + [0] * len(neg_files)
 
     vec = TfidfVectorizer(max_features=10_000, ngram_range=(1, 2), stop_words="english")
     X   = vec.fit_transform(texts)
@@ -110,8 +118,8 @@ if predict_btn:
         bert_conf   = bert_result["score"]
 
         # TF-IDF + LR
-        X_input    = vec.transform([review_text])
-        tfidf_pred = clf.predict(X_input)[0]
+        X_input     = vec.transform([review_text])
+        tfidf_pred  = clf.predict(X_input)[0]
         tfidf_proba = clf.predict_proba(X_input)[0]
         tfidf_label = "POSITIVE" if tfidf_pred == 1 else "NEGATIVE"
         tfidf_conf  = float(tfidf_proba[tfidf_pred])
@@ -133,7 +141,7 @@ if predict_btn:
             st.markdown(f"## {badge(tfidf_label)}")
             st.metric("Confidence", f"{tfidf_conf*100:.1f}%")
             st.progress(tfidf_conf)
-            st.caption("Bigram TF-IDF · trained on 2,000 IMDB reviews")
+            st.caption("Bigram TF-IDF · trained on 2,000 NLTK movie reviews")
 
         # Agreement callout
         if bert_label == tfidf_label:
@@ -142,7 +150,7 @@ if predict_btn:
             st.warning(
                 f"⚠️ Models disagree — DistilBERT says **{bert_label}**, "
                 f"TF-IDF says **{tfidf_label}**. "
-                "This often happens with sarcasm or nuanced language the bag-of-words model misses."
+                "This often happens with sarcasm or nuanced phrasing that bag-of-words misses."
             )
 
         # Feature explainer
@@ -181,6 +189,6 @@ if predict_btn:
 st.markdown("---")
 st.caption(
     "DistilBERT: `distilbert-base-uncased-finetuned-sst-2-english` (Hugging Face) · "
-    "TF-IDF + Logistic Regression trained on IMDB reviews · "
+    "TF-IDF + Logistic Regression trained on NLTK movie reviews corpus · "
     "[GitHub repo](https://github.com/robertciceroson/NLP-Movie-Review-Sentiment-Classifier)"
 )
