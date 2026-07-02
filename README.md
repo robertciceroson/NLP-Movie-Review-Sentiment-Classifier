@@ -12,6 +12,8 @@ This project classifies IMDB movie reviews as **positive** or **negative** using
 
 **Supplementary Dataset:** [Sentiment140 Tweets Dataset](https://www.kaggle.com/datasets/kazanova/sentiment140) — used for cross-domain sentiment evaluation and generalization testing.
 
+**[▶ Live Demo — classify any movie review instantly](https://nlp-movie-review-sentiment-classifier-gf8ognas6stctqqixdyq5r.streamlit.app)**
+
 ---
 
 ## Concepts Covered
@@ -173,5 +175,5 @@ Input: "Complete waste of time. Terrible plot, awful dialogue."
 ## Author
 
 **Robert Cicero Son**  
-Scrum Master · Process Engineer · Prompt Engineer · Data Analyst · AI/ML Practitioner · CSM · CSPO · AI-Empowered SAFe Agilist · Active DoD Secret Clearance  
+Technical Scrum Master · AI Business Analyst · Prompt Engineer · Data Analyst · AI/ML Practitioner · CSM · CSPO · AI-Empowered SAFe Agilist · Active DoD Secret Clearance  
 [github.com/robertciceroson](https://github.com/robertciceroson) · [LinkedIn](https://www.linkedin.com/in/robert-son-0b33b3bb)
